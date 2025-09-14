@@ -62,13 +62,13 @@ export default function ChainDetailPage() {
             <div className="text-center">
               <p className="text-gray-400 text-sm">Total Debt</p>
               <p className="text-2xl font-bold text-white">
-                {String(chain?.totalDebt ?? 0n)}
+                {String(chain?.totalDebt ?? BigInt(0))}
               </p>
             </div>
             <div className="text-center">
               <p className="text-gray-400 text-sm">Health Factor</p>
               <p className="text-2xl font-bold text-white">
-                {String(health?.healthFactor ?? 0n)}
+                {String(health?.healthFactor ?? BigInt(0))}
               </p>
             </div>
             <div className="text-center">
@@ -103,14 +103,14 @@ export default function ChainDetailPage() {
                         Opp #{String(p.opportunityId)} • {p.side ? "YES" : "NO"}
                       </p>
                       <p className="text-gray-400 text-sm">
-                        Amount: {Number(p.amount ?? 0n) / 1_000_000} • Tokens:{" "}
-                        {Number(p.tokens ?? 0n) / 1_000_000}
+                        Amount: {Number(p.amount ?? BigInt(0)) / 1_000_000} •
+                        Tokens: {Number(p.tokens ?? BigInt(0)) / 1_000_000}
                       </p>
                     </div>
                     <div className="text-right">
                       <p className="text-gray-300 text-sm">Current Value</p>
                       <p className="text-white font-semibold">
-                        {Number(p.currentValue ?? 0n) / 1_000_000}
+                        {Number(p.currentValue ?? BigInt(0)) / 1_000_000}
                       </p>
                     </div>
                   </div>
@@ -151,11 +151,11 @@ export default function ChainDetailPage() {
                     <div className="grid grid-cols-2 gap-2 mt-2 text-sm text-gray-300">
                       <div className="flex items-center">
                         <TrendingUp className="w-4 h-4 text-green-400 mr-1" />{" "}
-                        Curr: {Number(r.currentValue ?? 0n) / 1_000_000}
+                        Curr: {Number(r.currentValue ?? BigInt(0)) / 1_000_000}
                       </div>
                       <div className="flex items-center">
                         <TrendingDown className="w-4 h-4 text-red-400 mr-1" />{" "}
-                        PnL: {Number(r.pnl ?? 0n) / 1_000_000}
+                        PnL: {Number(r.pnl ?? BigInt(0)) / 1_000_000}
                       </div>
                     </div>
                   </div>
